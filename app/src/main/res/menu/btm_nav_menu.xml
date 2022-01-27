@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainMenu"
+        android:title=""
+        android:icon="@drawable/ic_menu_icon"/>
+    
+    <item android:id="@+id/placeholder" android:title=""/>
+
+    <item
+        android:id="@+id/scanner"
+        android:title=""
+        android:icon="@drawable/ic_noun_scan_barcode_3388215"/>
+</menu>
+<!--menu
+cards
+scan
+profile-->

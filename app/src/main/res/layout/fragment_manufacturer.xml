@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".blacklist.ManufacturerFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/manufacturesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/gs1_country_list"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="0dp"
+            app:cardBackgroundColor="@color/colorPrimaryVariant"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="0dp"
+                    android:layout_marginVertical="0dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_weight="5"
+                        android:gravity="center_vertical"
+                        android:text="@string/add_manufacturer"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addManufactBsb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+
+                        android:layout_weight="0"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/add_manufact_to_blacklist"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        app:srcCompat="@drawable/ic_add"
+                        app:tint="@color/colorOnPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="0dp"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:textColorHint="@color/colorOnPrimary"
+                        app:boxCornerRadiusBottomEnd="@dimen/et_corner"
+                        app:boxCornerRadiusBottomStart="@dimen/et_corner"
+                        app:boxCornerRadiusTopEnd="@dimen/et_corner"
+                        app:boxCornerRadiusTopStart="@dimen/et_corner"
+                        app:boxStrokeColor="@color/et_stroke_color"
+                        app:counterTextColor="@color/colorOnPrimary"
+                        app:endIconTint="@color/colorOnPrimary"
+                        app:helperTextTextColor="@color/colorOnPrimary"
+                        app:hintTextColor="@color/colorOnPrimary"
+                        app:passwordToggleTint="@color/colorOnPrimary"
+                        app:placeholderTextColor="@color/colorOnPrimary"
+                        app:prefixTextColor="@color/colorOnPrimary"
+                        app:startIconTint="@color/colorOnPrimary"
+                        app:suffixTextColor="@color/colorOnPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/manufactureNameEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/company_manufacturer_name"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorOnPrimary"
+                            android:textColorHint="@color/lightDark" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="vertical"
+                        android:weightSum="5"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_toStartOf="@+id/blScannerBtn"
+                            android:textColorHint="@color/colorOnPrimary"
+                            app:boxCornerRadiusBottomEnd="@dimen/et_corner"
+                            app:boxCornerRadiusBottomStart="@dimen/et_corner"
+                            app:boxCornerRadiusTopEnd="@dimen/et_corner"
+                            app:boxCornerRadiusTopStart="@dimen/et_corner"
+                            app:boxStrokeColor="@color/et_stroke_color"
+                            app:counterTextColor="@color/colorOnPrimary"
+                            app:endIconTint="@color/colorOnPrimary"
+                            app:helperTextTextColor="@color/colorOnPrimary"
+                            app:hintTextColor="@color/colorOnPrimary"
+                            app:passwordToggleTint="@color/colorOnPrimary"
+                            app:placeholderTextColor="@color/colorOnPrimary"
+                            app:prefixTextColor="@color/colorOnPrimary"
+                            app:startIconTint="@color/colorOnPrimary"
+                            app:suffixTextColor="@color/colorOnPrimary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/manufactureCodeEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="@string/enter_barcode_number"
+                                android:inputType="number"
+                                android:minHeight="48dp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorOnPrimary"
+                                android:textColorHint="@color/lightDark" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageButton
+                            android:id="@+id/blScannerBtn"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginHorizontal="0dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/add_manufact_to_blacklist"
+                            app:srcCompat="@drawable/ic_noun_scan_barcode_3388215"
+                            app:tint="@color/colorOnPrimary" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/addManufactBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:minHeight="48dp"
+                    app:cardCornerRadius="300dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/add"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

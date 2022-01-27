@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".blacklist.BlacklistActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/blacklistToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingStart="0dp"
+        android:paddingEnd="10dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/colorOnPrimary" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blacklistToolbar">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/navMcv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:strokeColor="@color/colorOnPrimary"
+            app:strokeWidth="2dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:visibility="visible"
+                android:id="@+id/blTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorGravity="stretch"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                android:background="@android:color/transparent"
+                app:tabIndicatorColor="@color/colorOnPrimary"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextColor="@color/colorOnPrimary"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/fragsPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:persistentDrawingCache="scrolling"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

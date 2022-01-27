@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bsd_corner">30dp</dimen>
+    <dimen name="bsd_grabber_height">5dp</dimen>
+    <dimen name="bsd_grabber_c_radius">100dp</dimen>
+    <dimen name="mid_card_corner">15dp</dimen>
+    <dimen name="slider_card_corner">15dp</dimen>
+    <dimen name="pricing_card_corner">10dp</dimen>
+    <dimen name="et_corner" >100dp</dimen>
+    <dimen name="multiline_et_corner" >20dp</dimen>
+    <dimen name="mini_corner" >10dp</dimen>
+    <dimen name="color_select_card_radius" >15dp</dimen>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--
+    primary color
+    new #EF6C00
+    old #FF9800
+    -->
+    <color name="colorPrimary">#EF6C00</color>
+
+    <color name="colorPrimaryVariant">#101010</color>
+    <color name="colorOnPrimary">#FAFAFA</color>
+
+    <color name="colorSecondary">#4CAF50</color>
+    <color name="colorSecondaryVariant">#EF6C00</color>
+    <color name="colorOnSecondary">#101010</color>
+
+    <color name="darkWhite">#F6F6F6</color>
+    <color name="lightDark">#494949</color>
+    <color name="lightGrey">#E6E6E6</color>
+
+
+    <!-- Loyalty card color palettes -->
+    <color name="whiteCard">#DADADA</color>
+    <color name="blackCard">#323232</color>
+    <color name="redCard">#E03B3B</color>
+    <color name="orangeCard">#FF9800</color>
+    <color name="yellowCard">#F7D43A</color>
+    <color name="greenCard">#62CD28</color>
+    <color name="turquoiseCard">#34D0BE</color>
+    <color name="blueCard">#3A4AFC</color>
+    <color name="roseCard">#FC3AB5</color>
+
+    <color name="black_trans">#4D000000</color>
+    <color name="clickRippleEfDark">#0D000000</color>
+</resources>
