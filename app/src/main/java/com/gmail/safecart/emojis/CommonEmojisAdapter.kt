@@ -12,8 +12,13 @@ import com.google.android.material.card.MaterialCardView
 
 class CommonEmojisAdapter(
     private val context: Context,
-    private val listOfCommonEmojis: ArrayList<EmojiModel>):
+    private val listOfCommonEmojis: ArrayList<EmojiModel>
+) :
     RecyclerView.Adapter<CommonEmojisAdapter.ViewHolder>() {
+
+    private var selectedItemPosition = -1
+    private var lastSelectedItemPosition = -1
+    private val lastItemInTheList = listOfCommonEmojis.size - 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -27,13 +32,31 @@ class CommonEmojisAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val emoji = listOfCommonEmojis[position]
-        val emojiStatement = "${String(Character.toChars(emoji.emojiCode))} car"
+
+        val emojiStatement = "${String(Character.toChars(emoji.emojiCode))}\t${emoji.emojiName}"
         holder.commonEmojiTv.text = emojiStatement
 
         holder.commonEmojiHolder.setOnClickListener {
-            Toast.makeText(context.applicationContext, "pos = $position", Toast.LENGTH_SHORT)
-                .show()
+            if (position != lastItemInTheList)
+                selector(position)
         }
+
+        if (position == selectedItemPosition)
+            holder.selectedCategory()
+        else
+            holder.unSelectedCategory()
+    }
+
+    private fun selector(position: Int) {
+        selectedItemPosition = position
+
+        lastSelectedItemPosition = if (lastSelectedItemPosition == -1) {
+            selectedItemPosition
+        } else {
+            notifyItemChanged(lastSelectedItemPosition)
+            selectedItemPosition
+        }
+        notifyItemChanged(selectedItemPosition)
     }
 
     override fun getItemCount(): Int = listOfCommonEmojis.size
@@ -41,5 +64,13 @@ class CommonEmojisAdapter(
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val commonEmojiHolder: MaterialCardView = v.findViewById(R.id.commonEmojiHolder)
         val commonEmojiTv: TextView = v.findViewById(R.id.commonEmojiTv)
+
+        fun selectedCategory() {
+            commonEmojiHolder.strokeWidth = 5
+        }
+
+        fun unSelectedCategory() {
+            commonEmojiHolder.strokeWidth = 0
+        }
     }
 }

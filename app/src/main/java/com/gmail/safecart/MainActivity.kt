@@ -37,6 +37,7 @@ import com.gmail.safecart.blacklist.BlacklistModel
 import com.gmail.safecart.blacklist.ManufacturerListAdapter
 import com.gmail.safecart.emojis.CommonEmojisAdapter
 import com.gmail.safecart.emojis.EmotionsAndPeopleCategory
+import com.gmail.safecart.emojis.InitialCategoryPicks
 import com.gmail.safecart.lists.*
 import com.gmail.safecart.loyaltyCard.CardScannerActivity
 import com.gmail.safecart.loyaltyCard.InputUtil
@@ -439,7 +440,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun viewCommonEmojis(commonEmojisRv: RecyclerView?) {
         EmojiManager.install(TwitterEmojiProvider())
-        val commonEmojiList = EmotionsAndPeopleCategory.epEmojiNameAndCodeList()
+        val commonEmojiList = InitialCategoryPicks.epEmojiNameAndCodeList()
         commonEmojisRv?.setHasFixedSize(true)
         commonEmojisRv?.layoutManager = GridLayoutManager(
             this,

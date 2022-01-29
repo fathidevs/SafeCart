@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="bsd_corner">30dp</dimen>
+    <dimen name="bsd_corner">20dp</dimen>
     <dimen name="bsd_grabber_height">5dp</dimen>
     <dimen name="bsd_grabber_c_radius">100dp</dimen>
     <dimen name="mid_card_corner">15dp</dimen>
